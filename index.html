@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Waste Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>♻️ Smart Waste Classifier</h1>
+            <p>Upload or drag an image of waste to instantly classify it and get smart disposal recommendations.</p>
+        </header>
+
+        <!-- Main Card -->
+        <main class="card">
+            <!-- Upload Area -->
+            <div class="upload-area" id="drop-zone">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-content" id="upload-prompt">
+                    <span class="upload-icon">📁</span>
+                    <p>Drag & drop your waste image here, or <span class="browse-btn">browse</span></p>
+                    <small>Supports: JPG, PNG, WEBP</small>
+                </div>
+                <div class="preview-container" id="preview-container" style="display: none;">
+                    <img id="image-preview" src="" alt="Waste Preview">
+                    <button id="remove-btn" title="Remove image">×</button>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <button id="classify-btn" class="btn primary-btn" disabled>Classify Waste</button>
+
+            <!-- Loading Spinner -->
+            <div class="loader-container" id="loader" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing image with AI...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-container" id="results" style="display: none;">
+                <h3>Analysis Results</h3>
+                <div class="prediction-box">
+                    <div class="pred-item">
+                        <span>Detected Item:</span>
+                        <strong id="item-name">-</strong>
+                    </div>
+                    <div class="pred-item">
+                        <span>Confidence:</span>
+                        <strong id="item-confidence">-</strong>
+                    </div>
+                </div>
+
+                <div class="disposal-card" id="disposal-card">
+                    <h4 id="disposal-title">Disposal Recommendation</h4>
+                    <p id="disposal-desc">-</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built for AI/ML Internship Portfolio | Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
